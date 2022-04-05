@@ -1,0 +1,187 @@
+Time Counter:
+
+Basic inbuild functions required from time module
+
+time.time() - returns the number of seconds passed since epoch. epoch for unix 1 jan 1970
+time.clock() - current processor time as a floating point number expressed in sec
+timeit() - returns execution time
+time.sleep(1) to make sure our timer waits one second before decreasing as well as decrement it by 1 each time.
+time.ctime() -  function takes seconds passed since epoch as an argument and returns a string representing local time.
+
+Example code for time Counter
+
+COUNTS TIME UNTILL IT REACH SPECIFIED TIME IN SECONDS
+
+import time
+
+def stopwatch(seconds):
+    start = time.time()
+    time.clock()    
+    elapsed = 0
+    while elapsed < seconds:
+        elapsed = time.time() - start
+        print "loop cycle time: %f, seconds count: %02d" % (time.clock() , elapsed) 
+        time.sleep(1)  
+
+stopwatch(20)
+
+
+output:
+loop cycle time: 0.029489, seconds count : 00
+.
+.
+.
+.
+loop cycle time :0.032871, seconds count : 20
+
+REFERENCE LINK 
+https://www.programiz.com/python-programming/time
+
+
+****************************************************************************************************************************************************
+learnings of pygame:
+game programming is different from standard procedural python programming.
+installation:
+	1. sudo apt-get install python3-pip
+	2. sudo pip3 install pygame
+*understood how pygame works
+*went through the code of drawing a circle using pygame.
+	1. set up drawing window
+	2. Run untill user asks to quit
+	3. details of our required game details
+	4.display our content
+	5.Quit
+step1: install pygame
+step2: import pygame [import pygame]
+step3: initialize pygame [pygame.init()]
+step4: create window [pygame.display.set_mode((x, y))
+step5: give window a proper name [pygame.display.set_caption("__")]
+
+import pygame
+pygame.init()
+
+# Set up the drawing window
+screen = pygame.display.set_mode([500, 500])
+
+# Run until the user asks to quit
+running = True
+while running:
+
+    # Did the user click the window close button?
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the background with white
+    screen.fill((255, 255, 255))
+
+    # Draw a solid blue circle in the center
+    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+
+    # Flip the display
+    
+
+****************************************************************************************************************************************
+#what is gitlab,how to create a project on gitlab,pushing in gitlab
+# few commands in git
+
+Step1:git --version(to check the git version)
+Step2:gitconfig --global user.name "XXXX"(to login into gitlab account using username in gitbash/terminal/putty)
+      gitconfig --global user.name(to check the username logged in)
+Step3:gitconfig --global user.email "XXXXX"(to login into gitlab account using email id in gitbash/terminal/putty)
+      gitconfig --global user.email(to check the email logged in)
+Step4:
+-go to project folder and then move to new folder in gitlab then copy the URL
+-now move to gitbas and enter as cd URL
+Step5:
+ git init(initialising the gitlab)
+ git status(to check the present status of the git)
+ Step6:
+ git add filename(to add one file into another)
+ git add .(to add more than one file)
+Step7:
+ gitcommit -m "filename"(to commit the file)
+ git push -u origin master(pushing)
+
+#fork - it is a copy of a project
+-forking a repo allows to make changes without affecting the original project
+
+Step1:login to gitlab and move to your project
+Step2:go to fork button in the projects of gitlab account
+Step3:then select namespace and to merge request
+Step4:now move to branches and continue then submit merge request
+
+#how to setup ssh key in gitlab
+-used for authentication and to connect gitlab server without username and password
+
+#commands
+Step1:ssh-keygen
+Step2:open.ssh URL(then copy and paste URL from sshkey in gitlab account)
+
+#gitlab runner and its working
+
+
+*******************************************************************************************************************************************
+
+
+How to create grid in python:
+Grid : grid manager puts the widgets in a 2 - dimensional table.
+grid will be in 2 - dimensional list which can be queried by first specifying the row,then column.
+
+Grid creation :
+grids = [[0] for _ in range (gridSize)]
+
+Sample program:
+width = int(input("How wide?"))
+height = int(input("How high?"))
+grid = []
+row = []
+coloumn = []
+for i in range(width):
+ 
+   row.append(coloumn)
+
+for i in range(height):
+
+   grid.append(row)
+while True:
+    for i in range(len(grid)):
+        print(grid[i])
+
+ REFERENCE LINK :https://youtu.be/dQfTD0lHGHg
+
+ ****************************************************************************************************************************************************
+ 
+ 
+ ref link: https://github.com/russs123/pygame_button/blob/main/button.py
+
+
+
+*****************************************************************************************************************************************************
+KETEVENTS:
+
+pygame moddules to work with keyboard
+
+pygame.key.get_focused
+true if the display is receiving keyboard input from the system
+
+pygame.key.get_pressed
+get the state of all keyboard buttons
+
+
+K_UP                  up arrow
+K_DOWN                down arrow
+K_RIGHT               right arrow
+K_LEFT                left arrow
+K_0                   0
+K_1                   1
+K_2                   2
+K_3                   3
+K_4                   4
+K_5                   5
+K_6                   6
+K_7                   7
+K_8                   8
+K_9                   9
+
+reference link : https://www.pygame.org/docs/ref/key.html
